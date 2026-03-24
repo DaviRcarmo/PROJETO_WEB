@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+
+    <div class="titulo-topo">Controle de Vendas</div>
+
+    <div class="conteudo">
+
+     
+        <div class="produtos">
+
+            <div class="cabecalho">
+                <span>Produto</span>
+                <span>Preço (R$)</span>
+                <span>Quantidade</span>
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p1"> Camiseta Regata</label>
+                <span>19.90</span>
+                <input type="number" id="q1">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p2"> Camisa Social</label>
+                <span>59.90</span>
+                <input type="number" id="q2">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p3"> Blusa</label>
+                <span>119.90</span>
+                <input type="number" id="q3">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p4"> Pullover</label>
+                <span>39.90</span>
+                <input type="number" id="q4">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p5"> Sapato</label>
+                <span>99.90</span>
+                <input type="number" id="q5">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p6"> Calça</label>
+                <span>38.90</span>
+                <input type="number" id="q6">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p7"> Meias</label>
+                <span>9.90</span>
+                <input type="number" id="q7">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p8"> Luvas</label>
+                <span>24.90</span>
+                <input type="number" id="q8">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p9"> Jaqueta</label>
+                <span>329.90</span>
+                <input type="number" id="q9">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p10"> Bermuda</label>
+                <span>69.90</span>
+                <input type="number" id="q10">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p11"> Chinelo</label>
+                <span>14.90</span>
+                <input type="number" id="q11">
+            </div>
+
+            <div class="linha">
+                <label><input type="checkbox" id="p12"> Boné</label>
+                <span>6.90</span>
+                <input type="number" id="q12">
+            </div>
+
+        </div>
+
+     
+        <div class="pagamento">
+            <h3>Forma de Pagamento:</h3>
+
+            <label><input type="radio" name="pagamento" id="aVista"> À Vista</label>
+            <label><input type="radio" name="pagamento" id="aPrazo"> À Prazo</label>
+
+            <div class="parcelas">
+                <span>Quantidade de Parcelas:</span>
+                <select id="parcelas">
+                    <option value="">Escolha</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="botoes">
+        <button type="button" onclick="calcular()">Calcular</button>
+        <button type="button" onclick="limpar()">Limpar</button>
+    </div>
+
+    <div class="visor">
+        <input type="text" id="resultado" readonly>
+    </div>
+
+</div>
+
+<script>
+function calcular() {
+
+    let total = 0;
+    let resultado = document.getElementById("resultado");
+
+ 
+    if (document.getElementById("p1").checked) {
+        total += 19.90 * Number(document.getElementById("q1").value);
+    }
+
+    if (document.getElementById("p2").checked) {
+        total += 59.90 * Number(document.getElementById("q2").value);
+    }
+
+    if (document.getElementById("p3").checked) {
+        total += 119.90 * Number(document.getElementById("q3").value);
+    }
+
+    if (document.getElementById("p4").checked) {
+        total += 39.90 * Number(document.getElementById("q4").value);
+    }
+
+    if (document.getElementById("p5").checked) {
+        total += 99.90 * Number(document.getElementById("q5").value);
+    }
+
+    if (document.getElementById("p6").checked) {
+        total += 38.90 * Number(document.getElementById("q6").value);
+    }
+
+    if (document.getElementById("p7").checked) {
+        total += 9.90 * Number(document.getElementById("q7").value);
+    }
+
+    if (document.getElementById("p8").checked) {
+        total += 24.90 * Number(document.getElementById("q8").value);
+    }
+
+    if (document.getElementById("p9").checked) {
+        total += 329.90 * Number(document.getElementById("q9").value);
+    }
+
+    if (document.getElementById("p10").checked) {
+        total += 69.90 * Number(document.getElementById("q10").value);
+    }
+
+    if (document.getElementById("p11").checked) {
+        total += 14.90 * Number(document.getElementById("q11").value);
+    }
+
+    if (document.getElementById("p12").checked) {
+        total += 6.90 * Number(document.getElementById("q12").value);
+    }
+
+    if (total === 0) {
+        resultado.value = "Selecione algum produto";
+        return;
+    }
+
+    let aVista = document.getElementById("aVista").checked;
+    let aPrazo = document.getElementById("aPrazo").checked;
+
+    if (!aVista && !aPrazo) {
+        resultado.value = "Escolha o pagamento";
+        return;
+    }
+
+    if (aVista) {
+        let desconto = total * 0.085;
+        let totalFinal = total - desconto;
+
+        resultado.value = "Total: R$ " + totalFinal.toFixed(2);
+    }
+
+    if (aPrazo) {
+        let parcelas = Number(document.getElementById("parcelas").value);
+
+        if (!parcelas) {
+            resultado.value = "Escolha as parcelas";
+            return;
+        }
+
+        let taxa = total * 0.06;
+        let totalFinal = total + taxa + (6.90 * parcelas);
+
+        let valorParcela = totalFinal / parcelas;
+
+        if (valorParcela < 10) {
+            resultado.value = "Parcela muito pequena";
+            return;
+        }
+
+        resultado.value =
+            parcelas + "x de R$ " + valorParcela.toFixed(2) +
+            " Total: R$ " + totalFinal.toFixed(2);
+    }
+}
+
+function limpar() {
+
+    let resultado = document.getElementById("resultado");
+    resultado.value = "";
+
+    for (let i = 1; i <= 12; i++) {
+        document.getElementById("p" + i).checked = false;
+        document.getElementById("q" + i).value = "";
+    }
+
+    document.getElementById("aVista").checked = false;
+    document.getElementById("aPrazo").checked = false;
+}
+</script>
+
+</body>
+</html>

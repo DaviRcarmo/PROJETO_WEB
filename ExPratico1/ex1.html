@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Cálculos Matemáticos</h1>
+
+        <div class="visor">
+            <input type="text" id="resultado" placeholder="Resultado" readonly>
+        </div>
+
+        <form id="calcForm" onsubmit="event.preventDefault(); Calcular();">
+
+            <div id="campoNumero" class="campo">
+                <label>Digite seu número:</label>
+                <input type="number" id="num1" step="any">
+            </div>
+
+            <div class="campo">
+                <label>Operação</label>
+                <select id="operacao" onchange="mostrarCampos()">
+                    <option value="dobro">Dobro</option>
+                    <option value="triplo">Triplo</option>
+                    <option value="quadruplo">Quádruplo</option>
+                    <option value="quintuplo">Quíntuplo</option>
+                    <option value="sextuplo">Sêxtuplo</option>
+                    <option value="quadrado">Quadrado</option>
+                    <option value="cubo">Cubo</option>
+                    <option value="quarta">Quarta Potência</option>
+                    <option value="quinta">Quinta Potência</option>
+                    <option value="sexta">Sexta Potência</option>
+                    <option value="bhaskara">Bhaskara</option>
+                    <option value="media">Média aritmética entre 4 números</option>
+                    <option value="par">Verificar se é par ou ímpar</option>
+                </select>
+            </div>
+
+            <div id="bhaskaraCampos" style="display: none;">
+                <div class="campo">
+                    <label>A:</label>
+                    <input type="number" id="a" step="any">
+                </div>
+                <div class="campo">
+                    <label>B:</label>
+                    <input type="number" id="b" step="any">
+                </div>
+                <div class="campo">
+                    <label>C:</label>
+                    <input type="number" id="c" step="any">
+                </div>
+            </div>
+
+            <div id="mediaCampos" style="display: none;">
+                <div class="campo">
+                    <label>Número 1</label>
+                    <input type="number" id="n1" step="any">
+                </div>
+                <div class="campo">
+                    <label>Número 2</label>
+                    <input type="number" id="n2" step="any">
+                </div>
+                <div class="campo">
+                    <label>Número 3</label>
+                    <input type="number" id="n3" step="any">
+                </div>
+                <div class="campo">
+                    <label>Número 4</label>
+                    <input type="number" id="n4" step="any">
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button type="submit">Calcular</button>
+                <button type="button" onclick="Limpar()">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function mostrarCampos() {
+            let op = document.getElementById("operacao").value;
+            let campoNumero = document.getElementById("campoNumero");
+            let bhaskaraDiv = document.getElementById("bhaskaraCampos");
+            let mediaDiv = document.getElementById("mediaCampos");
+
+            bhaskaraDiv.style.display = "none";
+            mediaDiv.style.display = "none";
+
+            campoNumero.style.display = "flex";
+
+            if (op === "bhaskara") {
+                campoNumero.style.display = "none";
+                bhaskaraDiv.style.display = "block";
+            } else if (op === "media") {
+                campoNumero.style.display = "none";
+                mediaDiv.style.display = "block";
+            }
+        }
+
+        function Calcular() {
+            let operacao = document.getElementById("operacao").value;
+            let resultado;
+
+            if (operacao === "dobro") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num * 2;
+            }
+            else if (operacao === "triplo") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num * 3;
+            }
+            else if (operacao === "quadruplo") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num * 4;
+            }
+            else if (operacao === "quintuplo") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num * 5;
+            }
+            else if (operacao === "sextuplo") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num * 6;
+            }
+            else if (operacao === "quadrado") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num ** 2;
+            }
+            else if (operacao === "cubo") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num ** 3;
+            }
+            else if (operacao === "quarta") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num ** 4;
+            }
+            else if (operacao === "quinta") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num ** 5;
+            }
+            else if (operacao === "sexta") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = num ** 6;
+            }
+            else if (operacao === "par") {
+                let num = Number(document.getElementById("num1").value);
+                resultado = (num % 2 === 0) ? "par" : "ímpar";
+            }
+            else if (operacao === "bhaskara") {
+                let a = Number(document.getElementById("a").value);
+                let b = Number(document.getElementById("b").value);
+                let c = Number(document.getElementById("c").value);
+
+                if (a === 0) {
+                    resultado = "Coeficiente 'a' não pode ser zero!";
+                } else {
+                    let delta = b ** 2 - 4 * a * c;
+                    if (delta < 0) {
+                        resultado = "Não possui raízes reais";
+                    } else {
+                        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                        resultado = "x1 = " + x1 + " e x2 = " + x2;
+                    }
+                }
+            }
+            else if (operacao === "media") {
+                let n1 = Number(document.getElementById("n1").value);
+                let n2 = Number(document.getElementById("n2").value);
+                let n3 = Number(document.getElementById("n3").value);
+                let n4 = Number(document.getElementById("n4").value);
+                resultado = (n1 + n2 + n3 + n4) / 4;
+            }
+
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function Limpar() {
+            document.getElementById("resultado").value = "";
+            document.getElementById("num1").value = "";
+            document.getElementById("a").value = "";
+            document.getElementById("b").value = "";
+            document.getElementById("c").value = "";
+            document.getElementById("n1").value = "";
+            document.getElementById("n2").value = "";
+            document.getElementById("n3").value = "";
+            document.getElementById("n4").value = "";
+        }
+
+    </script>
+</body>
+</html>

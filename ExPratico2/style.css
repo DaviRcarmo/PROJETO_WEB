@@ -1,0 +1,81 @@
+body{
+    font-family: Arial;
+    background-color: #f2f2f2;
+}
+
+.box{
+    width: 800px;
+    margin: 30px auto;
+    border: 2px solid black;
+    background: white;
+}
+
+.titulo-topo{
+    background: #dbe9f4;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.conteudo{
+    display: flex;
+    padding: 15px;
+}
+
+.produtos{
+    width: 65%;
+}
+
+.cabecalho{
+    display: grid;
+    grid-template-columns: 1fr 120px 120px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.linha{
+    display: grid;
+    grid-template-columns: 1fr 120px 120px;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.pagamento{
+    width: 35%;
+    border-left: 1px solid black;
+    padding-left: 15px;
+}
+
+.pagamento label{
+    display: block;
+    margin: 10px 0;
+}
+
+.parcelas{
+    margin-top: 15px;
+}
+
+.botoes{
+    text-align: center;
+    margin: 15px;
+}
+
+button{
+    padding: 10px;
+    margin: 5px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.visor{
+    padding: 10px;
+    border-top: 1px solid black;
+}
+
+.visor input{
+    width: 96.9%;
+    padding: 10px;
+    text-align: center;
+}

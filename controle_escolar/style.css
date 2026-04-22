@@ -1,0 +1,130 @@
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.mensagem {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.estatisticas {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.estatisticas p {
+    margin: 5px 0;
+}
+
+.lista {
+    margin-top: 25px;
+}
+
+.aluno {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.aluno p {
+    margin-bottom: 5px;
+}
+
+.status-aprovado {
+    color: green;
+    font-weight: bold;
+}
+
+.status-reprovado {
+    color: red;
+    font-weight: bold;
+}
+
+.acoes {
+    margin-top: 10px;
+}
+
+.acoes button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-remover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-detalhes {
+    background-color: #0074b8;
+    color: white;
+}
+
+.btn-remover:hover {
+    background-color: #a71d2a;
+}
+
+.btn-detalhes:hover {
+    background-color: #005a8f;
+}

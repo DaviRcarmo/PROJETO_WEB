@@ -16,7 +16,6 @@ export default function ex5() {
                     flexDirection: "row",
                 }}
             >
-                {/* VERDE */}
                 <View
                     style={{
                         flex: 0.5,
@@ -46,7 +45,6 @@ export default function ex5() {
                         flexDirection: "column",
                     }}
                 >
-                    {/* TEAL */}
                     <View
                         style={{
                             flex: 0.5,
@@ -69,7 +67,6 @@ export default function ex5() {
                         </TouchableOpacity>
                     </View>
 
-                    {/* AZUL */}
                     <View
                         style={{
                             flex: 0.5,
@@ -94,7 +91,6 @@ export default function ex5() {
                 </View>
             </View>
 
-            {/* SALMÃO */}
             <View
                 style={{
                     flex: 0.5,

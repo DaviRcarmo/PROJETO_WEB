@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {StyleSheet, TextInput, Text, TouchableOpacity, View} from 'react-native';
 
-const TextInputUsuario = () => {
+const App = () => {
     const [text, onChangeText] = useState('');
     const [number, onChangeNumber] = useState('');
     const nomeLabel = " Nome ";
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TextInputUsuario;
+export default App;

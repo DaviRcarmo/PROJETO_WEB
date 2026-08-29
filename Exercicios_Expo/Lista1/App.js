@@ -1,5 +1,5 @@
-import Ex7 from "./screens/ex7";
+import Ex8 from "./screens/oito";
 
 export default function app() {
-  return <Ex7 />;
+  return <Ex8 />;
 }

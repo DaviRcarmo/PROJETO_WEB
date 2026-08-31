@@ -1,0 +1,3 @@
+import Consultas from "./screens/consultas";
+// ...
+<Drawer.Screen name="Consultas" component={Consultas} options={{ title: "Consultas de CEP" }} />

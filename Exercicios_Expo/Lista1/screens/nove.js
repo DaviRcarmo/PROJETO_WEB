@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, } from 'react';
 import {StyleSheet, TextInput, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import  { Picker }  from  '@react-native-picker/picker' ;
 
 const App = () => {
     const [text, onChangeText] = useState('');
@@ -10,8 +11,11 @@ const App = () => {
     const senhaLabel = " Senha ";
     const CsenhaLabel = " Confirmação da senha ";
 
+    const [escolhaSelecionada, setescolhaSelecionada] = useState('');
+
     const [logar, setLogar] = useState('');
-    const onPress = () => setLogar(text + " - " + number + " - " + number2);
+    const onPress = () =>
+        setLogar(text + " - " + number + " - " + number2 + " - " + escolhaSelecionada);
 
     return (
         <SafeAreaView style={styles.container}>
@@ -48,6 +52,16 @@ const App = () => {
                     maxLength={8}
                 />
 
+                <Text style={styles.senhaContainer}>{CsenhaLabel}</Text>
+                <Picker style={styles.escolhaContainer}
+                        selectedValue = { escolhaSelecionada } 
+                        onValueChange = { ( itemValue, itemIndex )  => 
+                            setescolhaSelecionada( itemValue ) 
+                        } > 
+                        < Picker.Item  label = "Gestor"  value = "admin"  /> 
+                        < Picker.Item  label = "Administrador"  value = "manager"  />
+                        < Picker.Item  label = "Usuário"  value = "user"  /> 
+                </Picker>
 
                 <View style={styles.containerBotoes}>
                     <TouchableOpacity style={styles.button} onPress={onPress}>
@@ -148,6 +162,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
+    },
+
+    escolhaContainer: {
+        height: 50,
+        margin: 5,
+        borderWidth: 1,
+        padding: 10,
+        backgroundColor: 'white',
     },
 });
 

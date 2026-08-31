@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import {StyleSheet, TextInput, Text, TouchableOpacity, View} from 'react-native';
+import { useState, } from 'react';
+import {StyleSheet, Switch, TextInput, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import  { Picker }  from  '@react-native-picker/picker' ;
 
 const App = () => {
     const [text, onChangeText] = useState('');
@@ -10,8 +11,14 @@ const App = () => {
     const senhaLabel = " Senha ";
     const CsenhaLabel = " Confirmação da senha ";
 
+    const [escolhaSelecionada, setescolhaSelecionada] = useState('');
+
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
     const [logar, setLogar] = useState('');
-    const onPress = () => setLogar(text + " - " + number + " - " + number2);
+    const onPress = () =>
+        setLogar(text + " - " + number + " - " + number2 + " - " + escolhaSelecionada + " - " + (isEnabled ? "Sim" : "Não"));
 
     return (
         <SafeAreaView style={styles.container}>
@@ -48,6 +55,28 @@ const App = () => {
                     maxLength={8}
                 />
 
+                <Text style={styles.senhaContainer}>{CsenhaLabel}</Text>
+                <Picker style={styles.escolhaContainer}
+                        selectedValue = { escolhaSelecionada } 
+                        onValueChange = { ( itemValue, itemIndex )  => 
+                            setescolhaSelecionada( itemValue ) 
+                        } > 
+                        < Picker.Item  label = "Gestor"  value = "admin"  /> 
+                        < Picker.Item  label = "Administrador"  value = "manager"  />
+                        < Picker.Item  label = "Usuário"  value = "user"  /> 
+                </Picker>
+
+                <View style={styles.switchContainer}>
+                    <Text style={styles.senhaContainer}>Manter-se conectado</Text>
+                    <Switch
+                        trackColor={{false: "#e77878", true: "#94df83"}}
+                        thumbColor={isEnabled ? "#47eb22" : "#ed1111"}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+
+                    />
+                </View>
 
                 <View style={styles.containerBotoes}>
                     <TouchableOpacity style={styles.button} onPress={onPress}>
@@ -148,6 +177,20 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
+    },
+
+    escolhaContainer: {
+        height: 50,
+        margin: 5,
+        borderWidth: 1,
+        padding: 10,
+        backgroundColor: 'white',
+    },
+
+    switchContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        margin: 5,
     },
 });
 

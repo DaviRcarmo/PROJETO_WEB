@@ -36,7 +36,7 @@ const App = () => {
 
             <View style={styles.containerBotoes}>
                 <TouchableOpacity style={styles.button} onPress={onPress}>
-                    <Text style={styles.buttonText}>logar</Text>
+                    <Text style={styles.buttonText}>Logar</Text>
                 </TouchableOpacity>
         
                 <TouchableOpacity style={styles.button}>

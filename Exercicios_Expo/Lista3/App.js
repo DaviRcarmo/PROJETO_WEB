@@ -1,0 +1,1 @@
+(<Stack.Screen name="Contatos" component={ContatosScreen} />)

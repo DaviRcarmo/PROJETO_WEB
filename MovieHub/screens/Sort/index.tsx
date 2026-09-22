@@ -6,20 +6,19 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-const Splash: React.FC = () => {
+const Sort: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>
-          MovieHub
+          Ordenar por
         </Text>
         <Text style={styles.text}>
-          Carregando...
-Preparando sua experiência.
+          Escolha a forma de ordenação.
         </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Splash;
+export default Sort;

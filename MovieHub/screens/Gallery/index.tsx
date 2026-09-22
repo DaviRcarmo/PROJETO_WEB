@@ -6,20 +6,19 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-const Splash: React.FC = () => {
+const Gallery: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>
-          MovieHub
+          Galeria
         </Text>
         <Text style={styles.text}>
-          Carregando...
-Preparando sua experiência.
+          Selecione uma imagem da galeria ou câmera.
         </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Splash;
+export default Gallery;

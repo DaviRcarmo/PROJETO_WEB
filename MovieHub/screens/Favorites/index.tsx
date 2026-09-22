@@ -6,20 +6,19 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-const Splash: React.FC = () => {
+const Favorites: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>
-          MovieHub
+          Meus Favoritos
         </Text>
         <Text style={styles.text}>
-          Carregando...
-Preparando sua experiência.
+          Filmes favoritos serão exibidos aqui.
         </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Splash;
+export default Favorites;

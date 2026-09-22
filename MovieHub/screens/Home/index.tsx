@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-const Splash: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -14,12 +14,11 @@ const Splash: React.FC = () => {
           MovieHub
         </Text>
         <Text style={styles.text}>
-          Carregando...
-Preparando sua experiência.
+          Olá! Aqui estão seus filmes em destaque.
         </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Splash;
+export default Home;

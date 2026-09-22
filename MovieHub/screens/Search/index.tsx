@@ -6,20 +6,19 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-const Splash: React.FC = () => {
+const Search: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>
-          MovieHub
+          Pesquisar
         </Text>
         <Text style={styles.text}>
-          Carregando...
-Preparando sua experiência.
+          Pesquise filmes por título, gênero ou diretor.
         </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Splash;
+export default Search;

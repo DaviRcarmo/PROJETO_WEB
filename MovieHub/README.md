@@ -45,21 +45,53 @@ O projeto também tem como objetivo trabalhar conceitos de criação de interfac
 
 * Supabase
 
-## 📚 Como utilizar
+## 📂 Estrutura do Projeto
 
-### 1. Instalar as dependências
+O projeto possui uma estrutura modular, organizada de acordo com a responsabilidade de cada pasta e arquivo.
+
+```text
+MovieHub/
+├── assets/
+├── components/
+├── screens/
+├── navigation/
+├── services/
+├── hooks/
+├── contexts/
+├── types/
+├── utils/
+├── theme/
+├── config/
+└── App.tsx
+```
+
+## 📚 Como executar
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/DaviRcarmo/PROJETO_WEB.git
+```
+
+### 2. Acesse a pasta do projeto
+
+```bash
+cd PROJETO_WEB/MovieHub
+```
+
+### 3. Instale as dependências
 
 ```bash
 npm install
 ```
 
-### 2. Iniciar o aplicativo
+### 4. Inicie o aplicativo
 
 ```bash
 npx expo start
 ```
 
-Após iniciar o Expo, será possível executar o aplicativo utilizando o Expo Go ou um emulador online compatível.
+Após iniciar o Expo, execute o aplicativo utilizando o Expo Go ou um emulador online compatível.
 
 ## 🚧 Status
 

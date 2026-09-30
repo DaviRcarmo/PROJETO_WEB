@@ -1,56 +1,70 @@
-# Welcome to your Expo app 👋
+# 🎬 MovieHub
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+O MovieHub é uma aplicação mobile para gerenciamento e organização de filmes.
 
-## Get started
+O projeto foi desenvolvido com finalidade educacional, utilizando React Native, Expo e TypeScript.
 
-1. Install dependencies
+## 🎯 Objetivo
 
-   ```bash
-   npm install
-   ```
+Demonstrar, de forma prática, o desenvolvimento de uma aplicação mobile utilizando React Native, Expo e TypeScript, aplicando uma estrutura organizada e modular.
 
-2. Start the app
+O projeto também tem como objetivo trabalhar conceitos de criação de interfaces, navegação entre telas, reutilização de componentes e organização do código.
 
-   ```bash
-   npx expo start
-   ```
+## 🎥 Funcionalidades
 
-In the output, you'll find options to open the app in a
+* Login
+* Cadastro de usuário
+* Tela inicial
+* Listagem de filmes
+* Cadastro de filmes
+* Detalhes do filme
+* Edição de filmes
+* Exclusão de filmes
+* Filmes favoritos
+* Pesquisa
+* Filtros
+* Gêneros
+* Ordenação
+* Estatísticas
+* Compartilhamento de filmes
+* Cinemas próximos
+* Galeria e câmera
+* Trailer do filme
+* Perfil do usuário
+* Configurações
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 💻 Tecnologias
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Mobile
 
-## Get a fresh project
+* React Native
+* Expo
+* TypeScript
 
-When you're ready, run:
+### Banco de Dados
+
+* Supabase
+
+## 📚 Como utilizar
+
+### 1. Instalar as dependências
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Iniciar o aplicativo
 
-### Other setup steps
+```bash
+npx expo start
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Após iniciar o Expo, será possível executar o aplicativo utilizando o Expo Go ou um emulador online compatível.
 
-## Learn more
+## 🚧 Status
 
-To learn more about developing your project with Expo, look at the following resources:
+Em desenvolvimento.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 👨‍💻 Autor
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Davi Ribeiro
